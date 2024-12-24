@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSC Notes Manager</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-light shadow-sm" id="topNav">
+        <div class="container-fluid">
+               <span><a href="https://github.com/ShivaPrasadAcharya/bestnotes.git.io/edit/main/data.js" target="_blank">Note-git</a> </span>
+            <div class="search-container w-50">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search notes..">
+                    <div id="searchResults" class="d-none">
+                                  <div class="navigation-controls">
+                        <button id="prevMatch" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <span id="matchCount">0/0</span>
+                        <button id="nextMatch" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                                       </div>
+                </div>
+            </div>
+            <div class="filter-container">
+                <select id="subjectFilter" class="form-select">
+                    <option value="all">All Subjects</option>
+                </select>
+                <select id="titleFilter" class="form-select">
+                    <option value="all">All Titles</option>
+                </select>
+                <select id="subtitleFilter" class="form-select">
+                    <option value="all">All Subtitles</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#noteForm">
+                <i class="fas fa-plus"></i> Add Note
+            </button>
+        </div>
+    </nav>
+
+    <!-- Notes Container -->
+    <main class="container-fluid" id="notesContainer">
+        <!-- Notes will be dynamically inserted here -->
+    </main>
+
+    <!-- Note Form Modal -->
+    <div class="modal fade" id="noteForm" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add/Edit Note</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="noteEntryForm">
+                        <input type="hidden" id="noteId">
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Subtitle</label>
+                            <input type="text" class="form-control" id="subtitle">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="6" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Compiler</label>
+                            <input type="text" class="form-control" id="compiler" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-info" id="previewBtn">Preview</button>
+                    <button type="button" class="btn btn-success" id="generateCode">Generate Code</button>
+                    <button type="button" class="btn btn-primary" id="saveNote">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Code Preview Modal -->
+    <div class="modal fade" id="codePreview" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Generated Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <pre><code id="generatedCode"></code></pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="copyCode">Copy Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script src="search.js"></script>
+    <script src="filter.js"></script>
+    <script src="form.js"></script>
+    <script src="note.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
