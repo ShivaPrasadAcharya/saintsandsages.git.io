@@ -1,13 +1,13 @@
 const notesData = [
-    {
-        id: 1,
-        subject: "-",
-        title: "Premanandaji Maharaj",
-        subtitle: "Quotes",
-        description: "अरू कुरा जबजस्ती नगर्नू, भजन र जप जबरजस्ती गर्नू, मन नलागे पनि गर्नु",
-        compiler: "शिवप्रसाद आचार्य (२०८१)",
-        dateCreated: "2024-12-24",
-        isPinned: false
-    }
+{
+            id: 1,
+            subject: "-",
+            title: "Premanandaji Maharaj",
+            subtitle: "Quotes",
+            description: "- अरू कुरा जबजस्ती नगर्नू, भजन र जप जबरजस्ती गर्नू, मन नलागे पनि गर्नु\n- भुत ने कहा हम् तुमको मारिङ्गे। तो जवाफ दे दोः हम् तुम् को तारिङ्गे\n- नाम जप कर्ते हो सो जाओ तो सपनेभी दुख नै हो ते\n- पुरूषार्थ प्रारब्ध भन्दा शक्तिशालि छ\n- आखाँ २ वटा भएपनि दृष्टि त एकै हुन्छ नि\n- शिवजी नै श्रीजि (राधारानी) हें\n- \n-\n\n\n",
+            compiler: "शिवप्रसाद आचार्य (२०८१)",
+            dateCreated: "2024-12-24",
+            isPinned: false
+        }
 
 ];
