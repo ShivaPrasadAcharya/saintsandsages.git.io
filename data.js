@@ -1,4 +1,14 @@
 const notesData = [
+          {
+            id: 2,
+            subject: "-",
+            title: "",
+            subtitle: "Quotes",
+            description: "शङ्काको रावण लङ्काको रावणभन्दा खतरनाक हुन्छ",
+            compiler: "शिवप्रसाद आचार्य (२०८१)",
+            dateCreated: "2025-02-17",
+            isPinned: false
+        },
 {
             id: 1,
             subject: "-",
